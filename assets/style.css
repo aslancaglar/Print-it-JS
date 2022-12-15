@@ -234,14 +234,23 @@ header {
 }
 
 #banner .arrow_left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     left: 10px;
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
+}
+
+.arrow>img {
     object-fit: contain;
+    height: 60px;
+    width: 60px;
 }
 
 #banner .arrow_right {
     right: 10px;
+    top: 45%;
     width: 60px;
     height: 60px;
     object-fit: contain;
