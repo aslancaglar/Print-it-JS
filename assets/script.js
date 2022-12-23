@@ -20,6 +20,18 @@ const btnLeft = document.getElementById('btn68');
 
 btnLeft.addEventListener('click', btnClick);
 
+banner_img = document.querySelector(".bannerImg").setAttribute("src", "/assets/images/slideshow/slide1.jpg");
+
 function btnClick() {
-    alert("Test")
+    banner_img = document.querySelector(".bannerImg").setAttribute("src", "/assets/images/slideshow/slide2.jpg");
 }
+
+btnLeft.addEventListener('click', btnClick);
+
+function btnClick2() {
+    banner_img = document.querySelector(".bannerImg").setAttribute("src", "/assets/images/slideshow/slide1.jpg");
+}
+
+btnRight = document.querySelector(".arrow_left");
+
+btnRight.addEventListener('click', btnClick2);
