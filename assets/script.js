@@ -16,11 +16,60 @@ const slides = [{
     }
 ]
 
-const btnLeft = document.getElementById('btn68');
 
-btnLeft.addEventListener('click', btnClick);
 
-banner_img = document.querySelector(".bannerImg").setAttribute("src", "assets/images/slideshow/slide1.jpg");
+let i = 0;
+let testme = 0;
+let slideCount = slides.length;
+
+
+function btnClick2() {
+
+    if (i < slideCount) {
+        i++;
+        let bgImage = slides[i].image;
+        banner_img = document.querySelector(".bannerImg").setAttribute("src", "assets/images/slideshow/" + bgImage);
+        let slideTextNo = slides[i].tagLine;
+        let slidetext = document.getElementById('slidetext').innerHTML = slideTextNo;
+    }
+    if (i >= slideCount) {
+        i = -1;
+    }
+}
+
+console.log(testme);
+
+
+
+
+function btnClick1() {
+    if (i >= 0) {
+        i--;
+        let bgImage = slides[i].image;
+        banner_img = document.querySelector(".bannerImg").setAttribute("src", "assets/images/slideshow/" + bgImage);
+        let slideTextNo = slides[i].tagLine;
+        let slidetext = document.getElementById('slidetext').innerHTML = slideTextNo;
+    }
+}
+
+
+
+
+
+
+
+
+const btnRight = document.getElementById('btn68');
+
+btnRight.addEventListener('click', btnClick2);
+
+const btnLeft = document.getElementById('btn69');
+btnLeft.addEventListener('click', btnClick1);
+
+
+/*
+
+banner_img = document.querySelector(".bannerImg").setAttribute("src", "assets/images/slideshow/slide + bgImage.jpg");
 
 function btnClick() {
     banner_img = document.querySelector(".bannerImg").setAttribute("src", "assets/images/slideshow/slide2.jpg");
@@ -35,3 +84,4 @@ function btnClick2() {
 btnRight = document.querySelector(".arrow_left");
 
 btnRight.addEventListener('click', btnClick2);
+*/
