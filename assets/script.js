@@ -17,38 +17,48 @@ const slides = [{
 ]
 
 
-
 let i = 0;
-let testme = 0;
 let slideCount = slides.length;
+console.log(slideCount);
 
 
 function btnClick2() {
-
     if (i < slideCount) {
-        i++;
         let bgImage = slides[i].image;
         banner_img = document.querySelector(".bannerImg").setAttribute("src", "assets/images/slideshow/" + bgImage);
         let slideTextNo = slides[i].tagLine;
         let slidetext = document.getElementById('slidetext').innerHTML = slideTextNo;
+        let dots = document.querySelectorAll(".dot");
+        let dot = document.getElementsByClassName("dot")[i];
+        dot.classList.add("dot_selected");
+
+
+
+
+        i++;
     }
     if (i >= slideCount) {
-        i = -1;
+        i = 0;
     }
+    console.log(i);
 }
 
-console.log(testme);
+
 
 
 
 
 function btnClick1() {
+
     if (i >= 0) {
-        i--;
         let bgImage = slides[i].image;
         banner_img = document.querySelector(".bannerImg").setAttribute("src", "assets/images/slideshow/" + bgImage);
         let slideTextNo = slides[i].tagLine;
         let slidetext = document.getElementById('slidetext').innerHTML = slideTextNo;
+        i--;
+    }
+    if (i < 0) {
+        i = slideCount - 1;
     }
 }
 
@@ -65,6 +75,8 @@ btnRight.addEventListener('click', btnClick2);
 
 const btnLeft = document.getElementById('btn69');
 btnLeft.addEventListener('click', btnClick1);
+
+
 
 
 /*
