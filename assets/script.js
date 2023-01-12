@@ -16,67 +16,60 @@ const slides = [{
     }
 ]
 
-
 let i = 0;
 let slideCount = slides.length;
-console.log(slideCount);
+
+const removeAllDots = () => {
+    document.querySelectorAll(".dot").forEach((element) => {
+        element.classList.remove('dot_selected');
+    })
+};
+
+function addDot(i) {
+    let dot = document.getElementsByClassName("dot")[i];
+    dot.classList.add("dot_selected");
+}
+
+function addImg() {
+    let bgImage = slides[i].image;
+    banner_img = document.querySelector(".bannerImg").setAttribute("src", "assets/images/slideshow/" + bgImage);
+}
+
+function addText() {
+    let slideTextNo = slides[i].tagLine;
+    document.getElementById('slidetext').innerHTML = slideTextNo;
+}
 
 
-function btnClick2() {
-    if (i < slideCount) {
-        let bgImage = slides[i].image;
-        banner_img = document.querySelector(".bannerImg").setAttribute("src", "assets/images/slideshow/" + bgImage);
-        let slideTextNo = slides[i].tagLine;
-        let slidetext = document.getElementById('slidetext').innerHTML = slideTextNo;
-        let dots = document.querySelectorAll(".dot");
-        let dot = document.getElementsByClassName("dot")[i];
-        dot.classList.add("dot_selected");
-
-
-
-
+function nextSlide() {
+    if (i === slideCount - 1) {
+        i = 0;
+    } else {
         i++;
     }
-    if (i >= slideCount) {
-        i = 0;
-    }
-    console.log(i);
+    addText();
+    addImg();
+    removeAllDots();
+    addDot(i);
 }
 
-
-
-
-
-
-function btnClick1() {
-
-    if (i >= 0) {
-        let bgImage = slides[i].image;
-        banner_img = document.querySelector(".bannerImg").setAttribute("src", "assets/images/slideshow/" + bgImage);
-        let slideTextNo = slides[i].tagLine;
-        let slidetext = document.getElementById('slidetext').innerHTML = slideTextNo;
+function previousSlide() {
+    if (i === 0) {
+        i = slideCount - 1;
+    } else {
         i--;
     }
-    if (i < 0) {
-        i = slideCount - 1;
-    }
+    addText();
+    addImg();
+    removeAllDots();
+    addDot(i);
 }
 
-
-
-
-
-
-
-
 const btnRight = document.getElementById('btn68');
-
-btnRight.addEventListener('click', btnClick2);
+btnRight.addEventListener('click', nextSlide);
 
 const btnLeft = document.getElementById('btn69');
-btnLeft.addEventListener('click', btnClick1);
-
-
+btnLeft.addEventListener('click', previousSlide);
 
 
 /*
