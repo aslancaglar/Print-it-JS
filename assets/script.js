@@ -70,23 +70,3 @@ btnRight.addEventListener('click', nextSlide);
 
 const btnLeft = document.getElementById('btn69');
 btnLeft.addEventListener('click', previousSlide);
-
-
-/*
-
-banner_img = document.querySelector(".bannerImg").setAttribute("src", "assets/images/slideshow/slide + bgImage.jpg");
-
-function btnClick() {
-    banner_img = document.querySelector(".bannerImg").setAttribute("src", "assets/images/slideshow/slide2.jpg");
-}
-
-btnLeft.addEventListener('click', btnClick);
-
-function btnClick2() {
-    banner_img = document.querySelector(".bannerImg").setAttribute("src", "assets/images/slideshow/slide1.jpg");
-}
-
-btnRight = document.querySelector(".arrow_left");
-
-btnRight.addEventListener('click', btnClick2);
-*/
